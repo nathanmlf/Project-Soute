@@ -8,15 +8,20 @@ export default function Home() {
   return (
     <>
       <header className="header">
-        <Link className="header_link" href="/" target="_blank">
-          <Image
-            className="header_logo"
-            src="/logo.svg"
-            alt="logo"
-            width={80}
-            height={80}
-          />
-        </Link>
+        <div className="logo-container">
+          <Link className="header_link" href="/" target="_blank">
+            <Image
+              className="header_logo"
+              src="/logo.svg"
+              alt="logo"
+              width={80}
+              height={80}
+            />
+          </Link>
+          <p>
+            <span>Sau</span>té
+          </p>
+        </div>
 
         <nav className="nav">
           <ul className="nav_items">

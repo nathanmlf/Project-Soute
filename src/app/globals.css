@@ -33,6 +33,21 @@ h2 {
   font-size: 1.5rem;
 }
 
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo-container p {
+  font-size: 2rem;
+  color: #dc1a32;
+}
+
+.logo-container p span {
+  color: #000;
+}
+
 .header_link {
   width: 80px;
   height: 80px;
@@ -98,7 +113,7 @@ h2 {
 
 .main-container {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 3fr;
 }
 
 .container-ingredients {
@@ -112,6 +127,7 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
   padding: 0px 20px 0px 20px;
 }
 
@@ -120,6 +136,15 @@ h2 {
   padding: 0px 20px 0px 20px;
   display: grid;
   grid-template-columns: 2fr 1fr;
+}
+
+.recipe-body h2::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 77px;
+  background-color: #dc1a32;
+  margin-top: 2px;
 }
 
 .recipe-body p {
@@ -131,9 +156,9 @@ h2 {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
-  gap: 20px;
+  padding: 0px 20px 0px 20px;
 }
 
 .food-img {
