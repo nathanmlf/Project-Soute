@@ -11,17 +11,19 @@ body {
   line-height: 1.5;
 }
 
-Image {
-  display: block;
-  max-width: 100%;
-}
-
 ul,
 li {
   list-style-type: none;
   margin: 0px;
   padding: 0px;
 }
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+/* Header */
 
 .header {
   padding: 20px 40px 20px 40px;
@@ -49,31 +51,111 @@ li {
 
 .nav_link {
   text-decoration: none;
+  display: inline-block;
   color: #000;
-  border-bottom: 2px solid transparent;
-  transition: color 0.2s, border-bottom 0.2s;
-  cursor: pointer;
-  will-change: color, border-bottom;
+  position: relative;
+  padding: 10px 0px 10px 0px;
 }
 
+.nav_link::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0px;
+  background-color: #dc1a32;
+  margin-top: 4px;
+  transition: 0.3s;
+  position: absolute;
+}
+
+/* Pq? */
 .nav_link:hover {
   color: #dc1a32;
-  border-bottom: 2px solid #dc1a32;
+  transition: 0.3s;
 }
-
+/*  */
+.nav_link:hover:after {
+  width: 100%;
+}
+/* Pq? */
 .github {
   width: 60px;
   height: 60px;
 }
 
-.github_image {
-  color: #000;
+.github-image {
   width: 60px;
   height: 60px;
-  transition: fill 0.2s;
-  will-change: fill;
 }
 
-.github_image:hover {
+.github-image:hover {
   fill: #dc1a32;
+}
+
+/*  */
+
+/* Main */
+
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.container-ingredients {
+  border: 2px solid #000;
+  border-radius: 4px;
+  margin-left: 20px;
+  background-color: #f8f5f0;
+}
+
+.ingredients-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px 0px 20px;
+}
+
+.container-recipe {
+  background-color: #fff;
+  padding: 0px 20px 0px 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.recipe-body p {
+  font-size: 1.25rem;
+  font-weight: normal;
+}
+
+.recipe-img {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+}
+
+.food-img {
+  display: block;
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+.food-tst {
+  display: block;
+  max-width: 100%;
+}
+
+/* Footer */
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  display: inline-block;
+  background-color: #dc1a32;
+  color: #fff;
+  text-align: center;
 }
