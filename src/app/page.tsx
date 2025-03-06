@@ -37,7 +37,7 @@ export default function Home() {
               </Link>
             </li>
             <li>
-              <Link className="nav-link" href="/">
+              <Link className="navlink" href="/">
                 Recipes
               </Link>
             </li>
@@ -45,7 +45,11 @@ export default function Home() {
         </nav>
 
         <div className="github">
-          <Link className="github-link" href="https://github.com/nathanmlf">
+          <Link
+            className="github-link"
+            rel="noopener noreferrer"
+            href="https://github.com/nathanmlf"
+          >
             <Image
               className="github-image"
               src="/github.svg"

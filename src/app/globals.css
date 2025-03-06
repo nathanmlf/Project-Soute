@@ -39,8 +39,9 @@ p {
 
 .header_logo {
   width: 100px;
-  height: 100px;
   display: block;
+  max-width: 100%;
+  height: auto;
   padding: 0px;
   margin: 0px;
 }
@@ -118,6 +119,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .github-link {
@@ -129,17 +131,15 @@ p {
   width: 60px;
   height: 60px;
   display: block;
+  max-width: 100%;
+  height: auto;
   padding: 0px;
   margin: 0px;
 }
 
-/* Pq? */
-
 .github-image:hover {
   content: url("/githubHover.svg");
 }
-
-/* ? */
 
 /* Main */
 
@@ -207,6 +207,7 @@ p {
 .food-img {
   display: block;
   max-width: 100%;
+  height: auto;
   border-radius: 4px;
   padding: 0px;
   margin: 0px;
