@@ -37,7 +37,7 @@ export default function Home() {
               </Link>
             </li>
             <li>
-              <Link className="navlink" href="/">
+              <Link className="nav-link" href="/">
                 Recipes
               </Link>
             </li>
@@ -60,7 +60,6 @@ export default function Home() {
           </Link>
         </div>
       </header>
-      {/*  */}
 
       <main className="main-container">
         <div className="container-ingredients">
@@ -108,7 +107,6 @@ export default function Home() {
               className="food-img"
               src="/imgTeste.jpg"
               alt="Teste"
-              layout="responsive"
               width={500}
               height={300}
             />
