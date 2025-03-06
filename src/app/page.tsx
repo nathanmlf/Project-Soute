@@ -9,34 +9,35 @@ export default function Home() {
     <>
       <header className="header">
         <div className="logo-container">
-          <Link className="header_link" href="/" target="_blank">
-            <Image
-              className="header_logo"
-              src="/logo.svg"
-              alt="logo"
-              width={80}
-              height={80}
-            />
+          <Image
+            className="header_logo"
+            src="/logo.svg"
+            alt="logo"
+            width={100}
+            height={100}
+          />
+
+          <Link className="header-link" href="/" target="_blank">
+            <p>
+              <span>Sau</span>té
+            </p>
           </Link>
-          <p>
-            <span>Sau</span>té
-          </p>
         </div>
 
         <nav className="nav">
-          <ul className="nav_items">
+          <ul className="nav-items">
             <li>
-              <Link className="nav_link" href="/">
+              <Link className="nav-link" href="/">
                 Contact
               </Link>
             </li>
             <li>
-              <Link className="nav_link" href="/">
+              <Link className="nav-link" href="/">
                 About
               </Link>
             </li>
             <li>
-              <Link className="nav_link" href="/">
+              <Link className="nav-link" href="/">
                 Recipes
               </Link>
             </li>
@@ -44,7 +45,7 @@ export default function Home() {
         </nav>
 
         <div className="github">
-          <Link href="https://github.com/nathanmlf">
+          <Link className="github-link" href="https://github.com/nathanmlf">
             <Image
               className="github-image"
               src="/github.svg"

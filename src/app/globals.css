@@ -18,53 +18,73 @@ li {
   padding: 0px;
 }
 
-h2 {
-  font-size: 1.5rem;
-  font-weight: normal;
+h2,
+p {
+  margin: 0px;
 }
 
 /* Header */
 
 .header {
-  padding: 20px 40px 20px 40px;
+  padding: 20px 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 1.5rem;
+  width: 100vw;
+  gap: 20px;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+}
+
+.header_logo {
+  width: 100px;
+  height: 100px;
+  display: block;
+  padding: 0px;
+  margin: 0px;
 }
 
 .logo-container {
   display: flex;
+  align-content: center;
   align-items: center;
+  justify-content: center;
   gap: 20px;
 }
 
-.logo-container p {
-  font-size: 2rem;
-  color: #dc1a32;
+.header-link {
+  display: inline-block;
+  text-decoration: none;
 }
 
-.logo-container p span {
+.header-link p {
+  font-size: 2rem;
+  color: #dc1a32;
+  position: relative;
+}
+
+.header-link p::before {
+  content: "";
+  left: -5px;
+  bottom: 11px;
+  position: absolute;
+  width: 2px;
+  height: 32px;
+  background-color: #dc1a32;
+}
+
+.header-link p span {
   color: #000;
 }
 
-.header_link {
-  width: 80px;
-  height: 80px;
-}
-
-.header_logo {
-  width: 80px;
-  height: 80px;
-}
-
-.nav_items {
+.nav-items {
   display: flex;
   gap: 40px;
   font-weight: bold;
 }
 
-.nav_link {
+.nav-link {
   text-decoration: none;
   display: inline-block;
   color: #000;
@@ -72,7 +92,7 @@ h2 {
   padding: 10px 0px 10px 0px;
 }
 
-.nav_link::after {
+.nav-link::after {
   content: "";
   display: block;
   height: 2px;
@@ -83,31 +103,43 @@ h2 {
   position: absolute;
 }
 
-/* Pq? */
-.nav_link:hover {
+.nav-link:hover {
   color: #dc1a32;
   transition: 0.3s;
 }
-/*  */
-.nav_link:hover:after {
+
+.nav-link:hover:after {
   width: 100%;
 }
-/* Pq? */
+
 .github {
   width: 60px;
   height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.github-link {
+  display: inline-block;
+  text-decoration: none;
 }
 
 .github-image {
   width: 60px;
   height: 60px;
+  display: block;
+  padding: 0px;
+  margin: 0px;
 }
+
+/* Pq? */
 
 .github-image:hover {
-  fill: #dc1a32;
+  content: url("/githubHover.svg");
 }
 
-/*  */
+/* ? */
 
 /* Main */
 
@@ -131,11 +163,22 @@ h2 {
   padding: 0px 20px 0px 20px;
 }
 
+.container-ingredients h2 {
+  font-weight: normal;
+  padding: 10px;
+}
+
 .container-recipe {
   background-color: #fff;
   padding: 0px 20px 0px 20px;
   display: grid;
   grid-template-columns: 2fr 1fr;
+}
+
+.recipe-body h2 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  padding-bottom: 20px;
 }
 
 .recipe-body h2::after {
@@ -165,6 +208,8 @@ h2 {
   display: block;
   max-width: 100%;
   border-radius: 4px;
+  padding: 0px;
+  margin: 0px;
 }
 
 .food-tst {
@@ -179,8 +224,10 @@ h2 {
   left: 0;
   bottom: 0;
   width: 100vw;
-  display: inline-block;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #dc1a32;
   color: #fff;
-  text-align: center;
 }
