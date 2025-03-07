@@ -103,13 +103,26 @@ export default function Home() {
           </section>
 
           <div className="recipe-img">
-            <Image
-              className="food-img"
-              src="/imgTeste.jpg"
-              alt="Teste"
-              width={500}
-              height={300}
-            />
+            <div className="food-img-container">
+              <Image
+                className="food-img"
+                src="/imgTeste.jpg"
+                alt="Example image"
+                width={400}
+                height={400}
+              />
+            </div>
+            <div className="like-img-container">
+              <button>
+                <Image
+                  className="like-img"
+                  src="/like.svg"
+                  alt="Like image"
+                  width={100}
+                  height={100}
+                />
+              </button>
+            </div>
           </div>
         </article>
       </main>
