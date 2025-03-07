@@ -1,8 +1,9 @@
-// import Image from "next/image";
 // import styles from "./page.module.css";
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
+import Form from "next/form";
 
 export default function Home() {
   return (
@@ -15,12 +16,14 @@ export default function Home() {
             alt="logo"
             width={100}
             height={100}
+            priority={true}
+            loading="eager"
           />
 
           <Link className="header-link" href="/" target="_blank">
-            <p>
+            <h1>
               <span>Sau</span>té
-            </p>
+            </h1>
           </Link>
         </div>
 
@@ -56,27 +59,54 @@ export default function Home() {
               alt="Github logo"
               width={60}
               height={60}
+              priority={true}
+              loading="eager"
             />
           </Link>
         </div>
       </header>
 
       <main className="main-container">
+        {/*  */}
         <div className="container-ingredients">
           <article className="ingredients-body">
             <section className="ingredients">
-              <h2>Ingredients</h2>
+              <h1>Ingredients</h1>
+              <Form action="/search">
+                <input
+                  className="ingredients-form"
+                  name="ingredient"
+                  id="ingredient"
+                  type="text"
+                  placeholder="Onion, Garlic, Pepper, etc."
+                />
+                <button>Button to create a new line</button>
+              </Form>
             </section>
 
             <section className="quantities">
-              <h2>Quantity</h2>
+              <h1>Quantity</h1>
+              <Form action="/search">
+                <input
+                  className="quantities-form"
+                  name="ingredient"
+                  id="ingredient"
+                  type="text"
+                  placeholder="1kg, 1oz, 500g, etc. "
+                />
+              </Form>
             </section>
           </article>
         </div>
 
         <article className="container-recipe">
           <section className="recipe-body">
-            <h2>Recipe</h2>
+            <h1>Recipe</h1>
+            <input type="text" name="cooking-time" id="cooking-time" />
+            <select name="cooking-timers" id="cooking-timers">
+              <option value="minutes">Minutes</option>
+              <option value="hours">Hours</option>
+            </select>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
               at purus consequat, venenatis purus dictum, sollicitudin nunc. Nam
@@ -100,6 +130,7 @@ export default function Home() {
               lobortis hendrerit dictum, convallis ut sapien. Quisque id neque
               id erat tempor dapibus non vel lectus.
             </p>
+            <button>Button to submit the recipe</button>
           </section>
 
           <div className="recipe-img">
@@ -120,6 +151,8 @@ export default function Home() {
                   alt="Like image"
                   width={100}
                   height={100}
+                  priority={true}
+                  loading="eager"
                 />
               </button>
             </div>

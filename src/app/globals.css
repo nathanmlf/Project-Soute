@@ -18,7 +18,7 @@ li {
   padding: 0px;
 }
 
-h2,
+h1,
 p {
   margin: 0px;
 }
@@ -32,7 +32,6 @@ p {
   justify-content: space-between;
   font-size: 1.5rem;
   width: 100vw;
-  gap: 20px;
   flex-wrap: nowrap;
   box-sizing: border-box;
 }
@@ -59,13 +58,14 @@ p {
   text-decoration: none;
 }
 
-.header-link p {
+.header-link h1 {
   font-size: 2rem;
   color: #dc1a32;
   position: relative;
+  font-weight: bold;
 }
 
-.header-link p::before {
+.header-link h1::before {
   content: "";
   left: -5px;
   bottom: 11px;
@@ -75,7 +75,7 @@ p {
   background-color: #dc1a32;
 }
 
-.header-link p span {
+.header-link h1 span {
   color: #000;
 }
 
@@ -146,6 +146,10 @@ p {
 .main-container {
   display: grid;
   grid-template-columns: 1fr 3fr;
+  max-width: 2000px;
+  margin: auto;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .container-ingredients {
@@ -153,19 +157,56 @@ p {
   border-radius: 4px;
   margin-left: 20px;
   background-color: #f8f5f0;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
 }
 
 .ingredients-body {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+}
+
+.ingredients,
+.quantities {
+  text-align: start;
+}
+
+.ingredients-form {
+  border: 2px solid black;
+  border-radius: 4px;
+  font-size: 1.25rem;
+  background-color: #fff;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.ingredients-form:hover {
+  border-color: #dc1a32;
+}
+
+.ingredients-form:focus {
+  outline: none;
+  border-color: #dc1a32;
+}
+
+.quantities-form {
+  border: 2px solid black;
+  border-radius: 4px;
+  font-size: 1.25rem;
+  background-color: #fff;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.ingredients-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
   padding: 0px 20px 0px 20px;
 }
 
-.container-ingredients h2 {
+.container-ingredients h1 {
   font-weight: normal;
-  padding: 10px;
+  font-size: 1.5rem;
+  padding: 10px 0px 10px 0px;
 }
 
 .container-recipe {
@@ -175,13 +216,13 @@ p {
   grid-template-columns: 2fr 1fr;
 }
 
-.recipe-body h2 {
+.recipe-body h1 {
   font-size: 1.5rem;
   font-weight: normal;
   padding-bottom: 20px;
 }
 
-.recipe-body h2::after {
+.recipe-body h1::after {
   content: "";
   display: block;
   height: 2px;
