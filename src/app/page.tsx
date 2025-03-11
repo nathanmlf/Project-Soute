@@ -8,7 +8,7 @@ import Form from "next/form";
 export default function Home() {
   return (
     <>
-      <header className="header">
+      <header className="header-container">
         <div className="logo-container">
           <Image
             className="header_logo"
@@ -27,7 +27,7 @@ export default function Home() {
           </Link>
         </div>
 
-        <nav className="nav">
+        <nav className="nav-container">
           <ul className="nav-items">
             <li>
               <Link className="nav-link" href="/">
@@ -47,7 +47,7 @@ export default function Home() {
           </ul>
         </nav>
 
-        <div className="github">
+        <div className="github-container">
           <Link
             className="github-link"
             rel="noopener noreferrer"
@@ -67,7 +67,6 @@ export default function Home() {
       </header>
 
       <main className="main-container">
-        {/*  */}
         <div className="container-ingredients">
           <article className="ingredients-body">
             <section className="ingredients">
