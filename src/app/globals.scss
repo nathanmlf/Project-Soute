@@ -5,57 +5,57 @@
 /* Estilos Gerais e CSS Resets*/
 
 body {
-  padding: 0px;
-  margin: 0px;
+  padding: $reset;
+  margin: $reset;
   -webkit-font-smoothing: antialiased;
 }
 
 ul,
 li {
+  margin: $reset;
+  padding: $reset;
   list-style-type: none;
-  margin: 0px;
-  padding: 0px;
 }
 
 h1,
 p {
-  margin: 0px;
-  padding: 0px;
+  margin: $reset;
+  padding: $reset;
 }
 
 a {
+  margin: $reset;
+  padding: $reset;
   text-decoration: none;
-  margin: 0px;
-  padding: 0px;
 }
 
 /* Header */
 
 .header-container {
   font-family: $heading-font-family;
-  padding: 20px 40px;
+  font-size: $font-size-md;
+  box-sizing: border-box;
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
-  font-size: 1.5rem;
+  padding: 20px 40px;
   width: 100vw;
-  flex-wrap: nowrap;
-  box-sizing: border-box;
 
   .logo-container {
+    gap: $gap-sm;
     display: flex;
     align-content: center;
     align-items: center;
     justify-content: center;
-    gap: 20px;
 
     .header_logo {
-      width: 100px;
+      padding: $reset;
+      margin: $reset;
       display: block;
+      width: 100px;
       max-width: 100%;
       height: auto;
-      padding: 0px;
-      margin: 0px;
     }
   }
 }
@@ -64,13 +64,13 @@ a {
   display: inline-block;
 
   h1 {
-    font-size: 2rem;
-    color: #dc1a32;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    color: $primary-color;
     position: relative;
-    font-weight: bold;
 
     span {
-      color: #000;
+      color: $full-black;
     }
 
     &::before {
@@ -80,21 +80,21 @@ a {
       position: absolute;
       width: 2px;
       height: 32px;
-      background-color: #dc1a32;
+      background-color: $primary-color;
     }
   }
 }
 
 .nav-container {
   .nav-items {
+    font-weight: $font-weight-bold;
+    gap: $gap-md;
     display: flex;
-    gap: 40px;
-    font-weight: bold;
 
     .nav-link {
-      text-decoration: none;
+      color: $full-black;
       display: inline-block;
-      color: #000;
+      text-decoration: none;
       position: relative;
       padding: 10px 0px 10px 0px;
 
@@ -103,14 +103,14 @@ a {
         display: block;
         height: 2px;
         width: 0px;
-        background-color: #dc1a32;
+        background-color: $primary-color;
         margin-top: 4px;
         transition: 0.3s;
         position: absolute;
       }
 
       &:hover {
-        color: #dc1a32;
+        color: $primary-color;
         transition: 0.3s;
 
         &::after {
@@ -122,25 +122,25 @@ a {
 }
 
 .github-container {
-  width: 60px;
-  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  width: 60px;
+  height: 60px;
 
   .github-link {
     display: inline-block;
     text-decoration: none;
 
     .github-image {
-      width: 60px;
-      height: 60px;
+      padding: $reset;
+      margin: $reset;
       display: block;
-      max-width: 100%;
+      height: 60px;
       height: auto;
-      padding: 0px;
-      margin: 0px;
+      width: 60px;
+      max-width: 100%;
     }
 
     &:hover {
@@ -152,49 +152,48 @@ a {
 /* Main */
 
 .main-container {
+  font-family: $body-font-family;
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr 3fr;
   max-width: 2000px;
   margin: auto;
   padding: 20px;
-  box-sizing: border-box;
-  font-family: $body-font-family;
 
   .container-ingredients {
+    background-color: $secondary-color;
+    border-radius: $border-radius;
     border: 2px solid #000;
-    border-radius: 4px;
     margin-left: 20px;
-    background-color: #f8f5f0;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
 
     h1 {
-      font-weight: normal;
-      font-size: 1.5rem;
+      font-size: $font-size-md;
+      font-weight: $font-weight-normal;
       padding: 10px 0px 10px 0px;
     }
 
     .ingredients-body {
+      gap: $gap-sm;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px;
       padding: 0px 20px 0px 20px;
       text-align: start;
 
       .ingredients {
         .ingredients-form {
+          font-size: $font-size-sm;
+          background-color: $full-white;
+          border-radius: $border-radius;
           border: 2px solid black;
-          border-radius: 4px;
-          font-size: 1.25rem;
-          background-color: #fff;
           padding: 10px;
           transition: 0.3s;
 
           &:hover {
-            border-color: #dc1a32;
+            border-color: $primary-color;
           }
           &:focus {
+            border-color: $primary-color;
             outline: none;
-            border-color: #dc1a32;
           }
         }
       }
@@ -202,19 +201,19 @@ a {
       .quantities {
         .quantities-form {
           border: 2px solid black;
-          border-radius: 4px;
-          font-size: 1.25rem;
+          border-radius: $border-radius;
+          font-size: $font-size-sm;
           background-color: #fff;
           padding: 10px;
           transition: 0.3s;
 
           &:hover {
-            border-color: #dc1a32;
+            border-color: $primary-color;
           }
 
           &:focus {
+            border-color: $primary-color;
             outline: none;
-            border-color: #dc1a32;
           }
         }
       }
@@ -222,15 +221,15 @@ a {
   }
 
   .container-recipe {
-    background-color: #fff;
-    padding: 0px 20px 0px 20px;
+    background-color: $full-white;
     display: grid;
     grid-template-columns: 2fr 1fr;
+    padding: 0px 20px 0px 20px;
 
     .recipe-body {
       h1 {
-        font-size: 1.5rem;
-        font-weight: normal;
+        font-size: $font-size-md;
+        font-weight: $font-weight-normal;
         padding-bottom: 20px;
 
         &::after {
@@ -238,14 +237,14 @@ a {
           display: block;
           height: 2px;
           width: 77px;
-          background-color: #dc1a32;
+          background-color: $primary-color;
           margin-top: 2px;
         }
       }
 
       p {
-        font-size: 1.25rem;
-        font-weight: normal;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-normal;
       }
     }
 
@@ -258,42 +257,42 @@ a {
       padding: 0px 20px 0px 20px;
 
       .food-img-container {
-        width: 100%;
-        flex-grow: 1;
         display: flex;
+        flex-grow: 1;
         align-items: center;
         justify-content: center;
+        width: 100%;
 
         .food-img {
+          border-radius: $border-radius;
+          padding: $reset;
+          margin: $reset;
           display: block;
           max-width: 100%;
           height: auto;
-          border-radius: 4px;
-          padding: 0px;
-          margin: 0px;
         }
       }
 
       .like-img-container {
-        width: 100%;
-        flex-grow: 1;
         display: flex;
+        flex-grow: 1;
         align-items: center;
         justify-content: center;
+        width: 100%;
 
         .like-img {
           display: block;
           max-width: 100%;
           height: auto;
-          padding: 0px;
-          margin: 0px;
+          padding: $reset;
+          margin: $reset;
         }
 
         button {
+          display: block;
           background: none;
           border: none;
           cursor: pointer;
-          display: block;
 
           &:hover .like-img {
             content: url("/likeHover.svg");
@@ -307,14 +306,14 @@ a {
 /* Footer */
 
 .footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $primary-color;
+  color: $full-white;
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100vw;
   height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #dc1a32;
-  color: #fff;
 }
