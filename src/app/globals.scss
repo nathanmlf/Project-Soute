@@ -160,17 +160,17 @@ a {
   margin: auto;
   padding: 20px;
 
+  &__titles {
+    font-size: $font-size-md;
+    font-weight: $font-weight-normal;
+    padding: 10px 0px 10px 0px;
+  }
+
   &__constituents {
     background-color: $secondary-color;
     border-radius: $border-radius;
     border: 2px solid #000;
     margin-left: 20px;
-
-    .main__titles {
-      font-size: $font-size-md;
-      font-weight: $font-weight-normal;
-      padding: 10px 0px 10px 0px;
-    }
 
     &--body {
       gap: $gap-sm;
@@ -233,7 +233,7 @@ a {
     padding: 0px 20px 0px 20px;
 
     &__body {
-      .recipe__title {
+      &--name {
         font-size: $font-size-md;
         font-weight: $font-weight-normal;
         padding-bottom: 20px;
@@ -246,6 +246,9 @@ a {
           background-color: $primary-color;
           margin-top: 2px;
         }
+      }
+
+      .recipeInput {
       }
 
       .recipe__text {

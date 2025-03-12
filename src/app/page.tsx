@@ -103,12 +103,14 @@ export default function Home() {
 
         <article className="recipe">
           <section className="recipe__body">
-            <h1 className="recipe__title">Recipe</h1>
-            <input type="text" name="cooking-time" id="cooking-time" />
-            <select name="cooking-timers" id="cooking-timers">
+            <input className="recipe__body--name" placeholder="Recipe name" />
+            <input className="recipeInput" type="text" placeholder="Recipe" />
+
+            <select name="recipeInput__name__timers">
               <option value="minutes">Minutes</option>
               <option value="hours">Hours</option>
             </select>
+
             <p className="recipe__text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
               at purus consequat, venenatis purus dictum, sollicitudin nunc. Nam
