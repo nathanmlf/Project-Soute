@@ -8,10 +8,10 @@ import Form from "next/form";
 export default function Home() {
   return (
     <>
-      <header className="header-container">
-        <div className="logo-container">
+      <header className="header">
+        <div className="header__logo">
           <Image
-            className="header_logo"
+            className="header__logo--image"
             src="/logo.svg"
             alt="logo"
             width={100}
@@ -20,41 +20,41 @@ export default function Home() {
             loading="eager"
           />
 
-          <Link className="header-link" href="/" target="_blank">
-            <h1>
-              <span>Sau</span>té
+          <Link className="header__link" href="/" target="_blank">
+            <h1 className="header__link--title">
+              <span className="detail">Sau</span>té
             </h1>
           </Link>
         </div>
 
-        <nav className="nav-container">
-          <ul className="nav-items">
+        <nav className="nav">
+          <ul className="nav__items">
             <li>
-              <Link className="nav-link" href="/">
+              <Link className="nav__items--links" href="/">
                 Contact
               </Link>
             </li>
             <li>
-              <Link className="nav-link" href="/">
+              <Link className="nav__items--links" href="/">
                 About
               </Link>
             </li>
             <li>
-              <Link className="nav-link" href="/">
+              <Link className="nav__items--links" href="/">
                 Recipes
               </Link>
             </li>
           </ul>
         </nav>
 
-        <div className="github-container">
+        <div className="github">
           <Link
-            className="github-link"
+            className="github__link"
             rel="noopener noreferrer"
             href="https://github.com/nathanmlf"
           >
             <Image
-              className="github-image"
+              className="github__link--image"
               src="/github.svg"
               alt="Github logo"
               width={60}
@@ -66,28 +66,27 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="main-container">
-        <div className="container-ingredients">
-          <article className="ingredients-body">
+      <main className="main">
+        <div className="main__constituents">
+          <article className="main__constituents--body">
             <section className="ingredients">
-              <h1>Ingredients</h1>
+              <h1 className="main__titles">Ingredients</h1>
               <Form action="/search">
                 <input
-                  className="ingredients-form"
+                  className="ingredients__form"
                   name="ingredient"
                   id="ingredient"
                   type="text"
                   placeholder="Onion, Garlic, Pepper, etc."
                 />
-                <button>Button to create a new line</button>
               </Form>
             </section>
 
             <section className="quantities">
-              <h1>Quantity</h1>
+              <h1 className="main__titles">Quantity</h1>
               <Form action="/search">
                 <input
-                  className="quantities-form"
+                  className="quantities__form"
                   name="ingredient"
                   id="ingredient"
                   type="text"
@@ -95,18 +94,22 @@ export default function Home() {
                 />
               </Form>
             </section>
+
+            <button className="constituents__button">
+              Button to create a new line
+            </button>
           </article>
         </div>
 
-        <article className="container-recipe">
-          <section className="recipe-body">
-            <h1>Recipe</h1>
+        <article className="recipe">
+          <section className="recipe__body">
+            <h1 className="recipe__title">Recipe</h1>
             <input type="text" name="cooking-time" id="cooking-time" />
             <select name="cooking-timers" id="cooking-timers">
               <option value="minutes">Minutes</option>
               <option value="hours">Hours</option>
             </select>
-            <p>
+            <p className="recipe__text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
               at purus consequat, venenatis purus dictum, sollicitudin nunc. Nam
               lectus lectus, sodales vel ullamcorper id, interdum et nunc. Nulla
@@ -132,20 +135,20 @@ export default function Home() {
             <button>Button to submit the recipe</button>
           </section>
 
-          <div className="recipe-img">
-            <div className="food-img-container">
+          <div className="food">
+            <div className="food__container">
               <Image
-                className="food-img"
+                className="food__container--image"
                 src="/imgTeste.jpg"
                 alt="Example image"
                 width={400}
                 height={400}
               />
             </div>
-            <div className="like-img-container">
-              <button>
+            <div className="like">
+              <button className="like__button">
                 <Image
-                  className="like-img"
+                  className="like__button--image"
                   src="/like.svg"
                   alt="Like image"
                   width={100}
