@@ -67,99 +67,84 @@ export default function Home() {
       </header>
 
       <main className="main">
-        <div className="main__constituents">
-          <article className="main__constituents--body">
+        <article className="main__constituents">
+          <Form className="main__constituents--form" action="/search">
             <section className="ingredients">
               <h1 className="main__titles">Ingredients</h1>
-              <Form action="/search">
-                <input
-                  className="ingredients__form"
-                  name="ingredient"
-                  id="ingredient"
-                  type="text"
-                  placeholder="Onion, Garlic, Pepper, etc."
-                />
-              </Form>
+              <input
+                className="ingredients__input"
+                name="ingredient"
+                id="ingredient"
+                type="text"
+                placeholder="Onion, Garlic, Pepper, etc."
+              />
             </section>
 
             <section className="quantities">
               <h1 className="main__titles">Quantity</h1>
-              <Form action="/search">
-                <input
-                  className="quantities__form"
-                  name="ingredient"
-                  id="ingredient"
-                  type="text"
-                  placeholder="1kg, 1oz, 500g, etc. "
-                />
-              </Form>
+              <input
+                className="quantities__input"
+                name="ingredient"
+                id="ingredient"
+                type="text"
+                placeholder="1kg, 1oz, 500g, etc. "
+              />
             </section>
 
             <button className="constituents__button">
               Button to create a new line
             </button>
-          </article>
-        </div>
+          </Form>
+        </article>
 
         <article className="recipe">
           <section className="recipe__body">
-            <input className="recipe__body--name" placeholder="Recipe name" />
-            <input className="recipeInput" type="text" placeholder="Recipe" />
+            <Form action="/search">
+              <input
+                type="text"
+                className="recipe__body--name"
+                placeholder="Recipe name"
+              />
 
-            <select name="recipeInput__name__timers">
-              <option value="minutes">Minutes</option>
-              <option value="hours">Hours</option>
-            </select>
+              <select className="time">
+                <option className="time__minutes" value="minutes">
+                  mins
+                </option>
+                <option className="time__hours" value="hours">
+                  hr
+                </option>
+              </select>
 
-            <p className="recipe__text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-              at purus consequat, venenatis purus dictum, sollicitudin nunc. Nam
-              lectus lectus, sodales vel ullamcorper id, interdum et nunc. Nulla
-              facilisi. Fusce ullamcorper commodo suscipit. Sed ante nulla,
-              condimentum id libero vel, vulputate condimentum arcu. Vestibulum
-              porttitor, diam vitae placerat aliquet, nisl neque pretium dolor,
-              sed facilisis tellus tellus sed turpis. Lorem ipsum dolor sit
-              amet, consectetur adipiscing elit. Sed auctor suscipit libero in
-              iaculis. Aenean ligula magna, tempor lobortis hendrerit dictum,
-              convallis ut sapien. Quisque id neque id erat tempor dapibus non
-              vel lectus.Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Curabitur at purus consequat, venenatis purus dictum,
-              sollicitudin nunc. Nam lectus lectus, sodales vel ullamcorper id,
-              interdum et nunc. Nulla facilisi. Fusce ullamcorper commodo
-              suscipit. Sed ante nulla, condimentum id libero vel, vulputate
-              condimentum arcu. Vestibulum porttitor, diam vitae placerat
-              aliquet, nisl neque pretium dolor, sed facilisis tellus tellus sed
-              turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Sed auctor suscipit libero in iaculis. Aenean ligula magna, tempor
-              lobortis hendrerit dictum, convallis ut sapien. Quisque id neque
-              id erat tempor dapibus non vel lectus.
-            </p>
-            <button>Button to submit the recipe</button>
+              <div className="like">
+                <button className="like__button">
+                  <Image
+                    className="like__button--image"
+                    src="/like.svg"
+                    alt="Like image"
+                    width={100}
+                    height={100}
+                    priority={true}
+                    loading="eager"
+                  />
+                </button>
+              </div>
+
+              <div className="steps">
+                <button className="steps__button">Add Topic</button>
+              </div>
+
+              <button>Button to submit the recipe</button>
+            </Form>
           </section>
 
-          <div className="food">
-            <div className="food__container">
-              <Image
-                className="food__container--image"
-                src="/imgTeste.jpg"
-                alt="Example image"
-                width={400}
-                height={400}
-              />
-            </div>
-            <div className="like">
-              <button className="like__button">
-                <Image
-                  className="like__button--image"
-                  src="/like.svg"
-                  alt="Like image"
-                  width={100}
-                  height={100}
-                  priority={true}
-                  loading="eager"
-                />
-              </button>
-            </div>
+          <div className="food__container">
+            <Image
+              className="food__container--image"
+              src="/imgTeste.jpg"
+              alt="Example image"
+              width={400}
+              height={400}
+            />
           </div>
         </article>
       </main>
