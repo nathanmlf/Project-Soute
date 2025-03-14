@@ -143,12 +143,10 @@ div {
 /* Main */
 
 .main {
+  @extend %maxContainer;
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
-  place-content: center;
-  max-width: 1800px;
-  margin: 0 auto;
   padding: 20px;
 
   &__titles {
@@ -164,15 +162,11 @@ div {
 
     &--form {
       gap: $gap-sm;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 2fr 1fr;
       padding: 0px 20px 0px 20px;
       text-align: start;
       border: 1px solid blue;
 
       .ingredients {
-        display: grid;
         &__input {
           font-size: $font-size-sm;
           background-color: $full-white;
@@ -192,11 +186,7 @@ div {
       }
 
       .quantities {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-
         &__input {
-          grid-column: 1;
           border-top: 2px solid $full-black;
           border-left: 2px solid $full-black;
           border-bottom: 2px solid $full-black;
@@ -233,7 +223,6 @@ div {
         border-radius: $border-radius;
         border: 2px solid $full-black;
         color: $full-white;
-        grid-row: 3;
       }
     }
   }
@@ -305,12 +294,13 @@ div {
 // }
 
 .food__container {
+  position: relative;
   &--image {
     border-radius: $border-radius;
-    margin: 0px;
     display: block;
     max-width: 100%;
     height: auto;
+    object-fit: "cover";
   }
 }
 

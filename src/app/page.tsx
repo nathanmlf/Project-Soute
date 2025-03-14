@@ -169,8 +169,7 @@ export default function Home() {
             className="food__container--image"
             src="/imgTeste.jpg"
             alt="Example image"
-            width={400}
-            height={400}
+            fill
           />
         </div>
       </main>
