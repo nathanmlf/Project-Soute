@@ -77,6 +77,7 @@ export default function Home() {
                 id="ingredient"
                 type="text"
                 placeholder="Onion, Garlic, Pepper, etc."
+                required
               />
             </section>
 
@@ -88,7 +89,19 @@ export default function Home() {
                 id="ingredient"
                 type="text"
                 placeholder="1kg, 1oz, 500g, etc. "
+                required
               />
+              <select className="quantities__input--options">
+                <option value="teaspoon">Tea Spoon</option>
+                <option value="desertSpoon">Desert Spoon</option>
+                <option value="tableSpoon">Table Spoon</option>
+                <option value="americanCup">American Cup</option>
+                <option value="cup">Cup</option>
+                <option value="ounce">Ounce (oz)</option>
+                <option value="gram">Gram (g)</option>
+                <option value="poundLibra">Pound / Libra (lb)</option>
+                <option value="kilogram">Kilogram (kg)</option>
+              </select>
             </section>
 
             <button className="constituents__button">
@@ -104,49 +117,62 @@ export default function Home() {
                 type="text"
                 className="recipe__body--name"
                 placeholder="Recipe name"
+                required
               />
 
-              <select className="time">
-                <option className="time__minutes" value="minutes">
-                  mins
-                </option>
-                <option className="time__hours" value="hours">
-                  hr
-                </option>
-              </select>
+              <div className="timeContainer">
+                <input
+                  type="number"
+                  className="timeContainer__number"
+                  placeholder="Cooking time"
+                  required
+                />
 
-              <div className="like">
-                <button className="like__button">
-                  <Image
-                    className="like__button--image"
-                    src="/like.svg"
-                    alt="Like image"
-                    width={100}
-                    height={100}
-                    priority={true}
-                    loading="eager"
-                  />
-                </button>
+                <select className="timeContainer__number--options">
+                  <option className="time__minutes" value="minutes">
+                    mins
+                  </option>
+                  <option className="time__hours" value="hours">
+                    hr
+                  </option>
+                </select>
               </div>
 
               <div className="steps">
                 <button className="steps__button">Add Topic</button>
               </div>
 
-              <button>Button to submit the recipe</button>
+              <div className="submit__recipe">
+                <button className="submit__recipe--button">
+                  Button to submit the recipe
+                </button>
+              </div>
             </Form>
-          </section>
 
-          <div className="food__container">
-            <Image
-              className="food__container--image"
-              src="/imgTeste.jpg"
-              alt="Example image"
-              width={400}
-              height={400}
-            />
-          </div>
+            {/* <div className="like">
+              <button className="like__button">
+                <Image
+                  className="like__button--image"
+                  src="/like.svg"
+                  alt="Like image"
+                  width={100}
+                  height={100}
+                  priority={true}
+                  loading="eager"
+                />
+              </button>
+            </div> */}
+          </section>
         </article>
+        <div className="food__container">
+          <Image
+            className="food__container--image"
+            src="/imgTeste.jpg"
+            alt="Example image"
+            width={400}
+            height={400}
+          />
+        </div>
       </main>
 
       <footer className="footer">
