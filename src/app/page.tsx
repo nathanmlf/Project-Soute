@@ -8,7 +8,7 @@ import { useState } from "react";
 
 
 export default function Home() {
-  const [saveButton, setSaveButton] = useState("salvar")  
+  const [saveButton, setSaveButton] = useState("Save recipe")  
   return (
     <>
     <header className="header">
@@ -34,7 +34,7 @@ export default function Home() {
         <ul className="nav__items">
           <li>
             <Link className="nav__items--links" href="/">
-              Contact
+              Recipes
             </Link>
           </li>
           <li>
@@ -44,7 +44,7 @@ export default function Home() {
           </li>
           <li>
             <Link className="nav__items--links" href="/">
-              Recipes
+              Contact
             </Link>
           </li>
         </ul>
@@ -54,43 +54,35 @@ export default function Home() {
 
     <main className="main">
       <article className="recipe">
-        <section className="recipe__body">
-          <Form action="/search">
+        <Form className="recipe__form" action="/search">
+          
+          <div className="recipe__container">
+          <input
+            type="text"
+            className="recipe__container--name"
+            placeholder="Recipe name"
+            required
+          />
+          </div>
+
+          <div className="time__container">
+            <label className="time__container--name" htmlFor="time">Cooking Time
+            </label>
             <input
+              className="time__container--input"
               type="text"
-              className="recipe__body--name"
-              placeholder="Recipe name"
+              placeholder="1hr, 20min, etc."
+              name="time"
               required
             />
+            
+          </div>
 
-            <div>
-              <input
-                type="number"
-                placeholder="Cooking time"
-                required
-              />
+          <div className="addLine__container">
+            <button className="addLine__container--button">Add cooking step</button>
+          </div>
 
-              <select>
-                <option value="minutes">
-                  mins
-                </option>
-                <option value="hours">
-                  hr
-                </option>
-              </select>
-            </div>
-
-            <div>
-              <button>Add Topic</button>
-            </div>
-
-            <div>
-              <button>
-                Button to submit the recipe
-              </button>
-            </div>
-          </Form>
-        </section>
+        </Form>
       </article>
 
       <article className="constituents">
@@ -100,7 +92,7 @@ export default function Home() {
 
         <h1 className="constituents__form--title">Ingredients</h1>
         <input
-          className="ingredients__title--input"
+          className="ingredients__input"
           name="ingredient"
           id="ingredient"
           type="text"
@@ -113,31 +105,22 @@ export default function Home() {
 
         <h1 className="constituents__form--title">Quantity</h1>
           <input
-          className="quantities__title--input"
+          className="quantities__input"
           name="ingredient"
           id="ingredient"
           type="text"
           placeholder="1kg, 1oz, 500g, etc. "
           required
           />
-        
-        <select className="inputOptions">
-          <option value="teaspoon">Tea Spoon</option>
-          <option value="desertSpoon">Desert Spoon</option>
-          <option value="tableSpoon">Table Spoon</option>
-          <option value="americanCup">American Cup</option>
-          <option value="cup">Cup</option>
-          <option value="ounce">Ounce (oz)</option>
-          <option value="gram">Gram (g)</option>
-          <option value="poundLibra">Pound / Libra (lb)</option>
-          <option value="kilogram">Kilogram (kg)</option>
-        </select>  
-        </section>
 
-        <button className="constituents__form--button" type="submit" onClick={() => 
+        </section>      
+
+        <button className="add-ingredient-button">+</button>
+
+        <button className="save-button" type="submit" onClick={() => 
           {
-            setSaveButton("Salvo!")
-            setTimeout(() => {setSaveButton("Salvar")}, 2000)
+            setSaveButton("Saved!")
+            setTimeout(() => {setSaveButton("Already saved.")}, 2000)
           } } >
           {saveButton}
         </button>

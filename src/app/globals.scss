@@ -112,45 +112,118 @@ a {
   @extend %maxContainer;
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   padding: 20px 40px 20px 40px;
 
   .recipe {
-    gap: $gap-sm;
-    padding: 10px;
-    box-sizing: border-box;
+    padding: 10px 20px 10px 20px;
     border: 1px solid red;
 
-    &__body {
-      &--name {
-        @extend %fontGluten400 !optional;
-        font-size: $font-size-md;
-        padding: 10px 0px 10px 0px;
-        border: 1px solid yellow;
-        width: 100%;
-        box-sizing: border-box;
+    &__form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(1fr);
+      gap: $gap-sm;
+      border: 1px solid blue;
+      
 
-        &::after {
-          content: "";
-          display: block;
-          height: 2px;
-          width: 77px;
-          background-color: $primary-color;
-          margin-top: 2px;
+      .recipe__container {
+        grid-column: 1 / span 3;
+        grid-row: 1;
+       
+        &--name {
+          @extend %fontGluten400 !optional;
+          font-size: $font-size-md;
+          box-sizing: border-box; 
+          padding: 10px;
+          width: 100%;
+          border: 2px solid $full-black;
+          border-radius: $border-radius;
+          transition: 0.3s;
+
+        &:hover {
+          border-color: $primary-color;
+        }
+
+        &:focus {
+          border-color: $primary-color;
+          outline: none;
         }
       }
     }
+  
+      .time__container {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+        display: flex;
+          gap: $gap-sm;
+        align-items: center;
+
+        &--name {
+          @extend %fontGluten400 !optional;
+          font-size: $font-size-sm;
+        }
+
+        &--input {
+          background-color: $primary-color;
+          color: $full-white;
+          padding: 10px;
+          border: 2px solid $full-black;
+          border-radius: $border-radius;
+          font-size: $font-size-sm;  
+
+          &::placeholder {
+            color: $secondary-color;
+          }
+        }
+
+        .time__options {
+          background-color: $primary-color;
+          color: $full-white;
+          padding: 10px;
+          border: 2px solid $full-black;
+          border-radius: $border-radius;
+          font-size: $font-size-sm;
+
+        &--minutes {
+          padding: 10px;
+        }
+
+        &--hours {
+          padding: 10px;
+        }
+      }
+    }
+
+    .addLine__container {
+      grid-column: 1;
+      grid-row: 3;
+      
+      &--button {
+        background-color: $primary-color;
+        color: $full-white;
+        font-size: $font-size-sm;
+        border-radius: $border-radius;
+        padding: 10px;
+        
+
+      }
+    }
   }
+}
 
   .constituents {
     background-color: $secondary-color;
     border-radius: $border-radius;
     border: 2px solid #000;
+    box-sizing: border-box;
+    padding: 10px 20px 10px 20px;
 
-    &__form { 
+    &__form {
+      gap: $gap-sm;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      padding: 10px;
+      grid-template-columns: repeat(1fr);
+      grid-template-rows: 1fr 1fr;
       text-align: start;
 
       &--title {
@@ -161,7 +234,7 @@ a {
 
       .ingredients {
         
-        &--input {
+        &__input {
           font-size: $font-size-sm;
           background-color: $full-white;
           border-radius: $border-radius;
@@ -172,6 +245,7 @@ a {
           &:hover {
             border-color: $primary-color;
           }
+
           &:focus {
             border-color: $primary-color;
             outline: none;
@@ -181,7 +255,7 @@ a {
 
       .quantities {
 
-        &--input {
+        &__input {
           border: 2px solid $full-black;
           border-radius: $border-radius;
           font-size: $font-size-sm;
@@ -198,59 +272,35 @@ a {
             outline: none;
           } 
         }
-        .inputOptions {
-          color: $full-white;
-          background-color: $primary-color;
-          border-radius: $border-radius;
-          font-size: $font-size-sm;
-          border: 2px solid $full-black;
-          padding: 10px;
-        }
       }
       
-      .constituents__button {
+      .add-ingredient-button {
         background-color: $primary-color;
         border-radius: $border-radius;
-        border: 2px solid $full-black;
         color: $full-white;
+        font-size: $font-size-sm;
+        border: 2px solid $full-black;
+        grid-column:1;
+        grid-row: 2;
+        align-self: start;
+        width: 50px; 
+        padding: 10px;
       }
-      // .food__container {
-      //   grid-column: 2;
-      //   &--image {
-      //     border-radius: $border-radius;
-      //     display: block;
-      //     max-width: 100%;
-      //     height: auto;
-      //     object-fit: "cover";
-      //   }
-      // }
+    }
+
+    .save-button {
+      background-color: $primary-color;
+      border-radius: $border-radius;
+      color: $full-white;
+      font-size: $font-size-sm;
+      border: 2px solid $full-black;
+      grid-column: 2;
+      grid-row: -1;
+      align-self: end;
+      padding: 10px;
     }
   }
 }
-
-// .like {
-//   grid-column: -1;
-//   &__button {
-//     display: block;
-//     background: none;
-//     border: none;
-//     cursor: pointer;
-
-//     &--image {
-//       display: block;
-//       padding: 0px;
-//       margin: 0px;
-//       max-width: 100%;
-//       height: auto;
-
-//       &:hover {
-//         content: url("/likeHover.svg");
-//       }
-//     }
-//   }
-// }
-
-
 
 /* Footer */
 
