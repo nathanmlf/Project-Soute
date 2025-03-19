@@ -97,7 +97,6 @@ export default function Home() {
                 id="ingredient"
                 type="text"
                 placeholder="Onion, Garlic, Pepper, etc."
-                required
               />
             </section>
 
@@ -109,7 +108,6 @@ export default function Home() {
                 id="ingredient"
                 type="text"
                 placeholder="1kg, 1oz, 500g, etc. "
-                required
               />
             </section>
 
