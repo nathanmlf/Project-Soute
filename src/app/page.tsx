@@ -54,10 +54,20 @@ export default function Home() {
         <article className="recipe">
           <Form className="recipe__form" action="/search">
             <div className="recipe__container">
+              <label htmlFor="recipe-name">
+                <Image
+                  className="book-img"
+                  src="book.svg"
+                  width={40}
+                  height={40}
+                  alt="Clock Picture"
+                />
+              </label>
               <input
                 type="text"
                 className="recipe__container--name"
                 placeholder="Recipe name"
+                name="recipe-name"
               />
             </div>
 
