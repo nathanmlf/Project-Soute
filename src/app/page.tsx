@@ -1,10 +1,10 @@
-// import styles from "./page.module.css";
 "use client";
 
 import Image from "next/image";
 import Link from "next/link";
 import Form from "next/form";
 import { useState } from "react";
+import ImageUpload from "./components/image-upload";
 
 export default function Home() {
   const [saveButton, setSaveButton] = useState("Save recipe");
@@ -15,7 +15,7 @@ export default function Home() {
           <Image
             className="header__logo--image"
             src="/logo.svg"
-            alt="logo"
+            alt="Cooking hat website logo"
             width={80}
             height={80}
             priority={true}
@@ -60,7 +60,7 @@ export default function Home() {
                   src="book.svg"
                   width={40}
                   height={40}
-                  alt="Clock Picture"
+                  alt="Cooking book image"
                 />
               </label>
               <input
@@ -78,7 +78,7 @@ export default function Home() {
                   src="clock.svg"
                   width={40}
                   height={40}
-                  alt="Clock Picture"
+                  alt="Clock image"
                 />
               </label>
               <input
@@ -87,6 +87,10 @@ export default function Home() {
                 placeholder="1hr, 20min, etc."
                 name="time"
               />
+            </div>
+
+            <div className="upload__container">
+              <ImageUpload />
             </div>
 
             <div className="addLine__container">

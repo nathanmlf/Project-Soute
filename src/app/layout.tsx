@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import "./variables.scss";
 import "./globals.scss";
+import "@uploadthing/react/styles.css";
+import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
+import { extractRouterConfig } from "uploadthing/server";
+import { ourFileRouter } from "../app/api/uploadthing/core";
 
 export const metadata: Metadata = {
   title: "Sauté",
@@ -14,7 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body>{children}</body>
+      <body>
+        <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
+
+        {children}
+      </body>
     </html>
   );
 }
