@@ -1,14 +1,15 @@
 "use client";
 
-import { UploadButton } from "@/utils/uploadthing";
+import { UploadDropzone } from "@/utils/uploadthing";
 import Image from "next/image";
 import { useState } from "react";
 
 const ImageUpload = () => {
   const [imageUrl, setImageUrl] = useState<string>("");
   return (
-    <div>
-      <UploadButton
+    <>
+      <UploadDropzone
+        className="custom__upload--button"
         endpoint="imageUploader"
         onClientUploadComplete={(res) => {
           setImageUrl(res[0].ufsUrl);
@@ -19,16 +20,14 @@ const ImageUpload = () => {
       />
 
       {imageUrl.length ? (
-        <div>
-          <Image
-            src={imageUrl}
-            alt="Final recipe image"
-            width={100}
-            height={100}
-          />
-        </div>
+        <Image
+          className="upload__container--image"
+          src={imageUrl}
+          alt="Uploaded image"
+          fill={true}
+        />
       ) : null}
-    </div>
+    </>
   );
 };
 

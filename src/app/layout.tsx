@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./variables.scss";
 import "./globals.scss";
+import "./customUploadButton.scss";
 import "@uploadthing/react/styles.css";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";

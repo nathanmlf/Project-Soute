@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Form from "next/form";
 import { useState } from "react";
-import ImageUpload from "./components/image-upload";
+import ImageUpload from "./components/image-upload-dropzone";
 
 export default function Home() {
   const [saveButton, setSaveButton] = useState("Save recipe");

@@ -1,0 +1,48 @@
+@import "./variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Gluten:wght@100..900&display=swap");
+@import url("../app/components/image-upload-dropzone");
+
+.custom__upload--button {
+  border: none !important;
+  @extend %fontGluten400 !optional;
+}
+
+.custom__upload--button > *[data-ut-element="upload-icon"] {
+  color: $primary-color;
+}
+
+.custom__upload--button > *[data-ut-element="label"] {
+  color: $full-black;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.custom__upload--button > *[data-ut-element="allowed-content"] {
+  color: $full-black;
+}
+
+.custom__upload--button [data-ut-element="button"] {
+  @extend %fontGluten400 !optional;
+  font-size: $font-size-sm;
+  background: $primary-color !important;
+
+  &::after {
+    background-color: $primary-color !important;
+  }
+
+  &:focus-within {
+    box-shadow: 0 0 0 2px white, 0 0 0 4px $full-black;
+  }
+
+  &[data-state="ready"] {
+    background-color: $primary-color !important;
+  }
+
+  &[data-state="readying"],
+  &[data-state="uploading"],
+  &[data-state="disabled"] {
+    background-color: $full-black !important;
+  }
+}
